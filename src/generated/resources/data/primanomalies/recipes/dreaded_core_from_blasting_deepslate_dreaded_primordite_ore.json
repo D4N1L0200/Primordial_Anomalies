@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "group": "dread_core",
+  "ingredient": {
+    "item": "primanomalies:deepslate_dreaded_primordite_ore"
+  },
+  "result": "primanomalies:dreaded_core"
+}

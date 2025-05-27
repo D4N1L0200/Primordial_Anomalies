@@ -1,0 +1,15 @@
+# idea
+.idea
+
+# gradle
+build
+.gradle
+gradle
+
+# other
+run
+run-data
+
+
+# Files from Forge MDK
+forge*changelog.txt

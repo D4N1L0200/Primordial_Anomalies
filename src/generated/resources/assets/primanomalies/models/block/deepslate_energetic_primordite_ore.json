@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "primanomalies:block/deepslate_energetic_primordite_ore"
+  }
+}

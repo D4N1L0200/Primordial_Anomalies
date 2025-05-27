@@ -1,0 +1,4 @@
+// 1.20.1	2025-05-26T20:00:18.015904	Tags for minecraft:block mod id primanomalies
+ebd6d8c482026e1bab86c38cab69b3ca57e58431 data/minecraft/tags/blocks/mineable/pickaxe.json
+23c20bbcafdc9517f8c7e607870b055b80273575 data/minecraft/tags/blocks/needs_diamond_tool.json
+e6c86ea15b0e03df9f088e84afe1f72c62cb2881 data/minecraft/tags/blocks/needs_stone_tool.json

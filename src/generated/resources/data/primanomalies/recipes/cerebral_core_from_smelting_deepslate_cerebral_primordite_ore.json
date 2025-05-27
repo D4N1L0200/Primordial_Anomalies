@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "cerebral_core",
+  "ingredient": {
+    "item": "primanomalies:deepslate_cerebral_primordite_ore"
+  },
+  "result": "primanomalies:cerebral_core"
+}
