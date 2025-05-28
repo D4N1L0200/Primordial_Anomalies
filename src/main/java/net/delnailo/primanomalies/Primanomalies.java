@@ -3,8 +3,11 @@ package net.delnailo.primanomalies;
 
 import com.mojang.logging.LogUtils;
 import net.delnailo.primanomalies.block.ModBlocks;
+import net.delnailo.primanomalies.block.entity.ModBlockEntities;
 import net.delnailo.primanomalies.item.ModCreativeModTabs;
 import net.delnailo.primanomalies.item.ModItems;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -32,6 +35,7 @@ public class Primanomalies {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -56,7 +60,6 @@ public class Primanomalies {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            LOGGER.info("Client setup done.");
         }
     }
 }

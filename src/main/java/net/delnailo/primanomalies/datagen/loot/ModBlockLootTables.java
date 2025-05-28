@@ -1,7 +1,6 @@
 package net.delnailo.primanomalies.datagen.loot;
 
 import net.delnailo.primanomalies.block.ModBlocks;
-import net.delnailo.primanomalies.item.ModItems;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
@@ -26,72 +25,47 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         // DREADED ITEMS
         this.dropSelf(ModBlocks.RAW_DREADED_PRIMORDITE_BLOCK.get());
 
-        this.add(ModBlocks.DREADED_PRIMORDITE_ORE.get(),
-          block -> createPrimorditeOreDrops(
-            ModBlocks.DREADED_PRIMORDITE_ORE.get(), ModItems.RAW_DREADED_PRIMORDITE.get()
-          )
-        );
-        this.add(ModBlocks.DEEPSLATE_DREADED_PRIMORDITE_ORE.get(),
-          block -> createPrimorditeOreDrops(
-            ModBlocks.DEEPSLATE_DREADED_PRIMORDITE_ORE.get(), ModItems.RAW_DREADED_PRIMORDITE.get()
-          )
-        );
+        this.add(ModBlocks.DREADED_PRIMORDITE_ORE.get(), block -> emptyLootTable());
+        this.add(ModBlocks.DEEPSLATE_DREADED_PRIMORDITE_ORE.get(), block -> emptyLootTable());
+
+        this.add(ModBlocks.DREADED_PRIMORDITE_ORE_CLIENT_VISUAL.get(), block -> emptyLootTable());
+        this.add(ModBlocks.DEEPSLATE_DREADED_PRIMORDITE_ORE_CLIENT_VISUAL.get(), block -> emptyLootTable());
 
         // VITAL ITEMS
         this.dropSelf(ModBlocks.RAW_VITAL_PRIMORDITE_BLOCK.get());
 
-        this.add(ModBlocks.VITAL_PRIMORDITE_ORE.get(),
-          block -> createPrimorditeOreDrops(
-            ModBlocks.VITAL_PRIMORDITE_ORE.get(), ModItems.RAW_VITAL_PRIMORDITE.get()
-          )
-        );
-        this.add(ModBlocks.DEEPSLATE_VITAL_PRIMORDITE_ORE.get(),
-          block -> createPrimorditeOreDrops(
-            ModBlocks.DEEPSLATE_VITAL_PRIMORDITE_ORE.get(), ModItems.RAW_VITAL_PRIMORDITE.get()
-          )
-        );
+        this.add(ModBlocks.VITAL_PRIMORDITE_ORE.get(), block -> emptyLootTable());
+        this.add(ModBlocks.DEEPSLATE_VITAL_PRIMORDITE_ORE.get(), block -> emptyLootTable());
+
+        this.add(ModBlocks.VITAL_PRIMORDITE_ORE_CLIENT_VISUAL.get(), block -> emptyLootTable());
+        this.add(ModBlocks.DEEPSLATE_VITAL_PRIMORDITE_ORE_CLIENT_VISUAL.get(), block -> emptyLootTable());
 
         // ENERGETIC ITEMS
         this.dropSelf(ModBlocks.RAW_ENERGETIC_PRIMORDITE_BLOCK.get());
 
-        this.add(ModBlocks.ENERGETIC_PRIMORDITE_ORE.get(),
-          block -> createPrimorditeOreDrops(
-            ModBlocks.ENERGETIC_PRIMORDITE_ORE.get(), ModItems.RAW_ENERGETIC_PRIMORDITE.get()
-          )
-        );
-        this.add(ModBlocks.DEEPSLATE_ENERGETIC_PRIMORDITE_ORE.get(),
-          block -> createPrimorditeOreDrops(
-            ModBlocks.DEEPSLATE_ENERGETIC_PRIMORDITE_ORE.get(), ModItems.RAW_ENERGETIC_PRIMORDITE.get()
-          )
-        );
+        this.add(ModBlocks.ENERGETIC_PRIMORDITE_ORE.get(), block -> emptyLootTable());
+        this.add(ModBlocks.DEEPSLATE_ENERGETIC_PRIMORDITE_ORE.get(), block -> emptyLootTable());
+
+        this.add(ModBlocks.ENERGETIC_PRIMORDITE_ORE_CLIENT_VISUAL.get(), block -> emptyLootTable());
+        this.add(ModBlocks.DEEPSLATE_ENERGETIC_PRIMORDITE_ORE_CLIENT_VISUAL.get(), block -> emptyLootTable());
 
         // CEREBRAL ITEMS
         this.dropSelf(ModBlocks.RAW_CEREBRAL_PRIMORDITE_BLOCK.get());
 
-        this.add(ModBlocks.CEREBRAL_PRIMORDITE_ORE.get(),
-          block -> createPrimorditeOreDrops(
-            ModBlocks.CEREBRAL_PRIMORDITE_ORE.get(), ModItems.RAW_CEREBRAL_PRIMORDITE.get()
-          )
-        );
-        this.add(ModBlocks.DEEPSLATE_CEREBRAL_PRIMORDITE_ORE.get(),
-          block -> createPrimorditeOreDrops(
-            ModBlocks.DEEPSLATE_CEREBRAL_PRIMORDITE_ORE.get(), ModItems.RAW_CEREBRAL_PRIMORDITE.get()
-          )
-        );
+        this.add(ModBlocks.CEREBRAL_PRIMORDITE_ORE.get(), block -> emptyLootTable());
+        this.add(ModBlocks.DEEPSLATE_CEREBRAL_PRIMORDITE_ORE.get(), block -> emptyLootTable());
+
+        this.add(ModBlocks.CEREBRAL_PRIMORDITE_ORE_CLIENT_VISUAL.get(), block -> emptyLootTable());
+        this.add(ModBlocks.DEEPSLATE_CEREBRAL_PRIMORDITE_ORE_CLIENT_VISUAL.get(), block -> emptyLootTable());
 
         // MOURNFUL ITEMS
         this.dropSelf(ModBlocks.RAW_MOURNFUL_PRIMORDITE_BLOCK.get());
 
-        this.add(ModBlocks.MOURNFUL_PRIMORDITE_ORE.get(),
-          block -> createPrimorditeOreDrops(
-            ModBlocks.MOURNFUL_PRIMORDITE_ORE.get(), ModItems.RAW_MOURNFUL_PRIMORDITE.get()
-          )
-        );
-        this.add(ModBlocks.DEEPSLATE_MOURNFUL_PRIMORDITE_ORE.get(),
-          block -> createPrimorditeOreDrops(
-            ModBlocks.DEEPSLATE_MOURNFUL_PRIMORDITE_ORE.get(), ModItems.RAW_MOURNFUL_PRIMORDITE.get()
-          )
-        );
+        this.add(ModBlocks.MOURNFUL_PRIMORDITE_ORE.get(), block -> emptyLootTable());
+        this.add(ModBlocks.DEEPSLATE_MOURNFUL_PRIMORDITE_ORE.get(), block -> emptyLootTable());
+
+        this.add(ModBlocks.MOURNFUL_PRIMORDITE_ORE_CLIENT_VISUAL.get(), block -> emptyLootTable());
+        this.add(ModBlocks.DEEPSLATE_MOURNFUL_PRIMORDITE_ORE_CLIENT_VISUAL.get(), block -> emptyLootTable());
 
         // this.dropSelf(ModBlocks.SAPPHIRE_STAIRS.get());
         // this.dropSelf(ModBlocks.SAPPHIRE_BUTTON.get());
@@ -152,6 +126,10 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         //         createSingleItemTable(ModItems.PINE_HANGING_SIGN.get()));
 
         // this.dropSelf(ModBlocks.PINE_SAPLING.get());
+    }
+
+    protected LootTable.Builder emptyLootTable() {
+        return LootTable.lootTable();
     }
 
     protected LootTable.Builder createPrimorditeOreDrops(Block block, Item rawItem) {

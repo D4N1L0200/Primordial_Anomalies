@@ -26,11 +26,25 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.DREADED_PRIMORDITE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_DREADED_PRIMORDITE_ORE);
 
+        simpleBlock(ModBlocks.DREADED_PRIMORDITE_ORE_CLIENT_VISUAL.get(),
+          models().cubeAll("dreaded_primordite_ore_client_visual",
+            modLoc("block/dreaded_primordite_ore")));
+        simpleBlock(ModBlocks.DEEPSLATE_DREADED_PRIMORDITE_ORE_CLIENT_VISUAL.get(),
+          models().cubeAll("deepslate_dreaded_primordite_ore_client_visual",
+            modLoc("block/deepslate_dreaded_primordite_ore")));
+
         // VITAL ITEMS
         blockWithItem(ModBlocks.RAW_VITAL_PRIMORDITE_BLOCK);
 
         blockWithItem(ModBlocks.VITAL_PRIMORDITE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_VITAL_PRIMORDITE_ORE);
+
+        simpleBlock(ModBlocks.VITAL_PRIMORDITE_ORE_CLIENT_VISUAL.get(),
+          models().cubeAll("vital_primordite_ore_client_visual",
+            modLoc("block/vital_primordite_ore")));
+        simpleBlock(ModBlocks.DEEPSLATE_VITAL_PRIMORDITE_ORE_CLIENT_VISUAL.get(),
+          models().cubeAll("deepslate_vital_primordite_ore_client_visual",
+            modLoc("block/deepslate_vital_primordite_ore")));
 
         // ENERGETIC ITEMS
         blockWithItem(ModBlocks.RAW_ENERGETIC_PRIMORDITE_BLOCK);
@@ -38,11 +52,25 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.ENERGETIC_PRIMORDITE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_ENERGETIC_PRIMORDITE_ORE);
 
+        simpleBlock(ModBlocks.ENERGETIC_PRIMORDITE_ORE_CLIENT_VISUAL.get(),
+          models().cubeAll("energetic_primordite_ore_client_visual",
+            modLoc("block/energetic_primordite_ore")));
+        simpleBlock(ModBlocks.DEEPSLATE_ENERGETIC_PRIMORDITE_ORE_CLIENT_VISUAL.get(),
+          models().cubeAll("deepslate_energetic_primordite_ore_client_visual",
+            modLoc("block/deepslate_energetic_primordite_ore")));
+
         // CEREBRAL ITEMS
         blockWithItem(ModBlocks.RAW_CEREBRAL_PRIMORDITE_BLOCK);
 
         blockWithItem(ModBlocks.CEREBRAL_PRIMORDITE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_CEREBRAL_PRIMORDITE_ORE);
+
+        simpleBlock(ModBlocks.CEREBRAL_PRIMORDITE_ORE_CLIENT_VISUAL.get(),
+          models().cubeAll("cerebral_primordite_ore_client_visual",
+            modLoc("block/cerebral_primordite_ore")));
+        simpleBlock(ModBlocks.DEEPSLATE_CEREBRAL_PRIMORDITE_ORE_CLIENT_VISUAL.get(),
+          models().cubeAll("deepslate_cerebral_primordite_ore_client_visual",
+            modLoc("block/deepslate_cerebral_primordite_ore")));
 
         // MOURNFUL ITEMS
         blockWithItem(ModBlocks.RAW_MOURNFUL_PRIMORDITE_BLOCK);
@@ -50,71 +78,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.MOURNFUL_PRIMORDITE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_MOURNFUL_PRIMORDITE_ORE);
 
-//        stairsBlock(((StairBlock) ModBlocks.SAPPHIRE_STAIRS.get()), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()));
-//        slabBlock(((SlabBlock) ModBlocks.SAPPHIRE_SLAB.get()), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()));
-//
-//        buttonBlock(((ButtonBlock) ModBlocks.SAPPHIRE_BUTTON.get()), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()));
-//        pressurePlateBlock(((PressurePlateBlock) ModBlocks.SAPPHIRE_PRESSURE_PLATE.get()), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()));
-//
-//        fenceBlock(((FenceBlock) ModBlocks.SAPPHIRE_FENCE.get()), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()));
-//        fenceGateBlock(((FenceGateBlock) ModBlocks.SAPPHIRE_FENCE_GATE.get()), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()));
-//        wallBlock(((WallBlock) ModBlocks.SAPPHIRE_WALL.get()), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()));
-//
-//        doorBlockWithRenderType(((DoorBlock) ModBlocks.SAPPHIRE_DOOR.get()), modLoc("block/sapphire_door_bottom"), modLoc("block/sapphire_door_top"), "cutout");
-//        trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.SAPPHIRE_TRAPDOOR.get()), modLoc("block/sapphire_trapdoor"), true, "cutout");
-//
-//        makeStrawberryCrop((CropBlock) ModBlocks.STRAWBERRY_CROP.get(), "strawberry_stage", "strawberry_stage");
-//        makeCornCrop(((CropBlock) ModBlocks.CORN_CROP.get()), "corn_stage_", "corn_stage_");
-//
-//        simpleBlockWithItem(ModBlocks.CATMINT.get(), models().cross(blockTexture(ModBlocks.CATMINT.get()).getPath(),
-//                blockTexture(ModBlocks.CATMINT.get())).renderType("cutout"));
-//        simpleBlockWithItem(ModBlocks.POTTED_CATMINT.get(), models().singleTexture("potted_catmint", new ResourceLocation("flower_pot_cross"), "plant",
-//                blockTexture(ModBlocks.CATMINT.get())).renderType("cutout"));
-//
-//        simpleBlockWithItem(ModBlocks.GEM_POLISHING_STATION.get(),
-//                new ModelFile.UncheckedModelFile(modLoc("block/gem_polishing_station")));
-//
-//        logBlock(((RotatedPillarBlock) ModBlocks.PINE_LOG.get()));
-//        axisBlock(((RotatedPillarBlock) ModBlocks.PINE_WOOD.get()), blockTexture(ModBlocks.PINE_LOG.get()), blockTexture(ModBlocks.PINE_LOG.get()));
-//
-//        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_PINE_LOG.get()), blockTexture(ModBlocks.STRIPPED_PINE_LOG.get()),
-//                new ResourceLocation(Primanomalies.MOD_ID, "block/stripped_pine_log_top"));
-//        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_PINE_WOOD.get()), blockTexture(ModBlocks.STRIPPED_PINE_LOG.get()),
-//                blockTexture(ModBlocks.STRIPPED_PINE_LOG.get()));
-//
-//        blockItem(ModBlocks.PINE_LOG);
-//        blockItem(ModBlocks.PINE_WOOD);
-//        blockItem(ModBlocks.STRIPPED_PINE_LOG);
-//        blockItem(ModBlocks.STRIPPED_PINE_WOOD);
-//
-//        blockWithItem(ModBlocks.PINE_PLANKS);
-//
-//        leavesBlock(ModBlocks.PINE_LEAVES);
-//
-//        signBlock(((StandingSignBlock) ModBlocks.PINE_SIGN.get()), ((WallSignBlock) ModBlocks.PINE_WALL_SIGN.get()),
-//                blockTexture(ModBlocks.PINE_PLANKS.get()));
-//
-//        hangingSignBlock(ModBlocks.PINE_HANGING_SIGN.get(), ModBlocks.PINE_WALL_HANGING_SIGN.get(), blockTexture(ModBlocks.PINE_PLANKS.get()));
-//        saplingBlock(ModBlocks.PINE_SAPLING);
-//
-//        blockWithItem(ModBlocks.MOD_PORTAL);
+        simpleBlock(ModBlocks.MOURNFUL_PRIMORDITE_ORE_CLIENT_VISUAL.get(),
+          models().cubeAll("mournful_primordite_ore_client_visual",
+            modLoc("block/mournful_primordite_ore")));
+        simpleBlock(ModBlocks.DEEPSLATE_MOURNFUL_PRIMORDITE_ORE_CLIENT_VISUAL.get(),
+          models().cubeAll("deepslate_mournful_primordite_ore_client_visual",
+            modLoc("block/deepslate_mournful_primordite_ore")));
     }
-
-//    private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
-//        simpleBlock(blockRegistryObject.get(),
-//                models().cross(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get())).getPath(),
-//                        blockTexture(blockRegistryObject.get())).renderType("cutout"));
-//    }
-//
-//    public void hangingSignBlock(Block signBlock, Block wallSignBlock, ResourceLocation texture) {
-//        ModelFile sign = models().sign(name(signBlock), texture);
-//        hangingSignBlock(signBlock, wallSignBlock, sign);
-//    }
-//
-//    public void hangingSignBlock(Block signBlock, Block wallSignBlock, ModelFile sign) {
-//        simpleBlock(signBlock, sign);
-//        simpleBlock(wallSignBlock, sign);
-//    }
 
     private String name(Block block) {
         return key(block).getPath();
@@ -124,45 +94,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         return ForgeRegistries.BLOCKS.getKey(block);
     }
 
-//    private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
-//        simpleBlockWithItem(blockRegistryObject.get(),
-//                models().singleTexture(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get())).getPath(),
-//                        new ResourceLocation("minecraft:block/leaves"),
-//                        "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
-//    }
-
     private void blockItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(Primanomalies.MOD_ID +
           ":block/" + Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get())).getPath()));
     }
-
-//    public void makeStrawberryCrop(CropBlock block, String modelName, String textureName) {
-//        Function<BlockState, ConfiguredModel[]> function = state -> strawberryStates(state, block, modelName, textureName);
-//
-//        getVariantBuilder(block).forAllStates(function);
-//    }
-//
-//    private ConfiguredModel[] strawberryStates(BlockState state, CropBlock block, String modelName, String textureName) {
-//        ConfiguredModel[] models = new ConfiguredModel[1];
-//        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((StrawberryCropBlock) block).getAgeProperty()),
-//                new ResourceLocation(Primanomalies.MOD_ID, "block/" + textureName + state.getValue(((StrawberryCropBlock) block).getAgeProperty()))).renderType("cutout"));
-//
-//        return models;
-//    }
-
-//    public void makeCornCrop(CropBlock block, String modelName, String textureName) {
-//        Function<BlockState, ConfiguredModel[]> function = state -> cornStates(state, block, modelName, textureName);
-//
-//        getVariantBuilder(block).forAllStates(function);
-//    }
-//
-//    private ConfiguredModel[] cornStates(BlockState state, CropBlock block, String modelName, String textureName) {
-//        ConfiguredModel[] models = new ConfiguredModel[1];
-//        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((CornCropBlock) block).getAgeProperty()),
-//                new ResourceLocation(Primanomalies.MOD_ID, "block/" + textureName + state.getValue(((CornCropBlock) block).getAgeProperty()))).renderType("cutout"));
-//
-//        return models;
-//    }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
