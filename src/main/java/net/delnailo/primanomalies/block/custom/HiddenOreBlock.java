@@ -1,94 +1,47 @@
 package net.delnailo.primanomalies.block.custom;
 
-import net.delnailo.primanomalies.block.OrePair;
-import net.delnailo.primanomalies.block.entity.HiddenOreBlockEntity;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.valueproviders.IntProvider;
-import net.minecraft.world.effect.MobEffects;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.storage.loot.LootParams;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import net.minecraft.world.phys.Vec3;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
+public class HiddenOreBlock extends Block {
+    final RegistryObject<Block> revealedOre;
 
-public class HiddenOreBlock extends DropExperienceBlock implements EntityBlock {
-    public HiddenOreBlock(Properties pProperties, IntProvider pXpRange) {
-        super(pProperties, pXpRange);
+    public HiddenOreBlock(Properties properties, RegistryObject<Block> revealedOre) {
+        super(properties);
+        this.revealedOre = revealedOre;
     }
 
-    private static ResourceLocation getLootTableFor(BlockState state, Player player, ItemStack tool) {
-        Block block = state.getBlock();
-        OrePair pair = OrePair.findOrePair(block);
+    @SuppressWarnings("deprecation")
+    @Override
+    public @NotNull InteractionResult use(@NotNull BlockState pState, Level pLevel, @NotNull BlockPos pPos,
+                                          Player pPlayer, @NotNull InteractionHand pHand,
+                                          @NotNull BlockHitResult pHit) {
+        ItemStack heldItem = pPlayer.getItemInHand(pHand);
 
-        if (pair == null) {
-            // fallback: return some default loot table
-            return new ResourceLocation("minecraft", "blocks/cobblestone");
+        if (!pLevel.isClientSide && isRevealingItem(heldItem)) {
+            BlockState revealedOre = this.revealedOre.get().defaultBlockState();
+            pLevel.setBlock(pPos, revealedOre, 3);
+            pLevel.playSound(null, pPos, SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.BLOCKS, 1.0F, 1.0F);
+            heldItem.hurtAndBreak(1, pPlayer, (p) -> p.broadcastBreakEvent(pHand));
+            return InteractionResult.SUCCESS;
         }
 
-        boolean invis = player.hasEffect(MobEffects.INVISIBILITY);
-        boolean deepslate = OrePair.isDeepslate(block);
-
-        if (invis) {
-            // Drop ore item loot table
-            return new ResourceLocation("primanomalies", "blocks/" + (deepslate ? "deepslate_" : "") + pair.baseName + "_drops");
-        }
-        // default: drop stone or deepslate
-        return new ResourceLocation("minecraft", deepslate ? "blocks/deepslate" : "blocks/stone");
+        return InteractionResult.PASS;
     }
 
-    @Override
-    public void playerDestroy(Level pLevel, Player pPlayer, BlockPos pPos, BlockState pState, @Nullable BlockEntity pBlockEntity, ItemStack pTool) {
-        if (!pLevel.isClientSide) {
-            ResourceLocation lootTableId;
-
-            lootTableId = getLootTableFor(pState, pPlayer, pTool);
-
-            LootParams.Builder paramsBuilder = new LootParams.Builder((ServerLevel) pLevel)
-              .withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pPos))
-              .withParameter(LootContextParams.TOOL, pTool)
-              .withParameter(LootContextParams.BLOCK_STATE, pState)
-              .withParameter(LootContextParams.THIS_ENTITY, pPlayer);
-
-            List<ItemStack> drops = pLevel.getServer().getLootData()
-              .getLootTable(lootTableId)
-              .getRandomItems(paramsBuilder.create(LootContextParamSets.BLOCK));
-
-            for (ItemStack drop : drops) {
-                popResource(pLevel, pPos, drop);
-            }
-        }
-
-        super.playerDestroy(pLevel, pPlayer, pPos, pState, pBlockEntity, pTool);
-    }
-
-    @Override
-    public @Nullable BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-        return new HiddenOreBlockEntity(pPos, pState);
-    }
-
-    @Override
-    public RenderShape getRenderShape(BlockState state) {
-        return RenderShape.INVISIBLE;
-    }
-
-    @Override
-    public boolean propagatesSkylightDown(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
-        return true;
-    }
-
-    @Override
-    public int getLightBlock(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
-        return 0;
+    private boolean isRevealingItem(ItemStack item) {
+        return item.is(Items.DIAMOND_HOE); // TODO: use tags
     }
 }

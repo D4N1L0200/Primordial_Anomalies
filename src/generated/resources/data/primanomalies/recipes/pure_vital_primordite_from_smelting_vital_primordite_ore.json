@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "pure_vital",
+  "ingredient": {
+    "item": "primanomalies:vital_primordite_ore"
+  },
+  "result": "primanomalies:pure_vital_primordite"
+}

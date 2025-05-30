@@ -1,9 +1,19 @@
 {
   "values": [
-    "primanomalies:raw_dreaded_primordite_block",
-    "primanomalies:raw_vital_primordite_block",
-    "primanomalies:raw_energetic_primordite_block",
-    "primanomalies:raw_cerebral_primordite_block",
-    "primanomalies:raw_mournful_primordite_block"
+    "primanomalies:dreaded_primordite_block",
+    "primanomalies:hidden_dreaded_primordite_ore",
+    "primanomalies:hidden_deepslate_dreaded_primordite_ore",
+    "primanomalies:vital_primordite_block",
+    "primanomalies:hidden_vital_primordite_ore",
+    "primanomalies:hidden_deepslate_vital_primordite_ore",
+    "primanomalies:energetic_primordite_block",
+    "primanomalies:hidden_energetic_primordite_ore",
+    "primanomalies:hidden_deepslate_energetic_primordite_ore",
+    "primanomalies:cerebral_primordite_block",
+    "primanomalies:hidden_cerebral_primordite_ore",
+    "primanomalies:hidden_deepslate_cerebral_primordite_ore",
+    "primanomalies:mournful_primordite_block",
+    "primanomalies:hidden_mournful_primordite_ore",
+    "primanomalies:hidden_deepslate_mournful_primordite_ore"
   ]
 }

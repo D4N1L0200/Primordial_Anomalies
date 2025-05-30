@@ -13,7 +13,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.List;
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -23,145 +22,99 @@ public class ModBlocks {
     /* BLOCK REGISTERING INIT */
 
     // DREADED ITEMS
-    public static final RegistryObject<Block> RAW_DREADED_PRIMORDITE_BLOCK = registerBlock("raw_dreaded_primordite_block",
+    public static final RegistryObject<Block> DREADED_PRIMORDITE_BLOCK = registerBlock(
+      "dreaded_primordite_block",
       () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
-    public static final RegistryObject<Block> DREADED_PRIMORDITE_ORE = registerBlock("dreaded_primordite_ore",
-      () -> new HiddenOreBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
-        .strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3, 6)));
-    public static final RegistryObject<Block> DEEPSLATE_DREADED_PRIMORDITE_ORE = registerBlock("deepslate_dreaded_primordite_ore",
-      () -> new HiddenOreBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
-        .strength(3f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
+    public static final RegistryObject<Block> DREADED_PRIMORDITE_ORE;
+    public static final RegistryObject<Block> DEEPSLATE_DREADED_PRIMORDITE_ORE;
+    public static final RegistryObject<Block> HIDDEN_DREADED_PRIMORDITE_ORE;
+    public static final RegistryObject<Block> HIDDEN_DEEPSLATE_DREADED_PRIMORDITE_ORE;
 
-    public static final RegistryObject<Block> DREADED_PRIMORDITE_ORE_CLIENT_VISUAL = registerBlock(
-      "dreaded_primordite_ore_client_visual",
-      () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
-        .noOcclusion()
-        .strength(0)
-        .instabreak())
-    );
-    public static final RegistryObject<Block> DEEPSLATE_DREADED_PRIMORDITE_ORE_CLIENT_VISUAL = registerBlock(
-      "deepslate_dreaded_primordite_ore_client_visual",
-      () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
-        .noOcclusion()
-        .strength(0)
-        .instabreak())
-    );
+    static {
+        PrimorditeOreSet dreaded = registerPrimorditeOreSet("dreaded",
+          UniformInt.of(3, 6), UniformInt.of(3, 7));
+        DREADED_PRIMORDITE_ORE = (RegistryObject<Block>) dreaded.stone();
+        DEEPSLATE_DREADED_PRIMORDITE_ORE = (RegistryObject<Block>) dreaded.deepslate();
+        HIDDEN_DREADED_PRIMORDITE_ORE = (RegistryObject<Block>) dreaded.hiddenStone();
+        HIDDEN_DEEPSLATE_DREADED_PRIMORDITE_ORE = (RegistryObject<Block>) dreaded.hiddenDeepslate();
+    }
 
     // VITAL ITEMS
-    public static final RegistryObject<Block> RAW_VITAL_PRIMORDITE_BLOCK = registerBlock("raw_vital_primordite_block",
+    public static final RegistryObject<Block> VITAL_PRIMORDITE_BLOCK = registerBlock(
+      "vital_primordite_block",
       () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
-    public static final RegistryObject<Block> VITAL_PRIMORDITE_ORE = registerBlock("vital_primordite_ore",
-      () -> new HiddenOreBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
-        .strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3, 6)));
-    public static final RegistryObject<Block> DEEPSLATE_VITAL_PRIMORDITE_ORE = registerBlock("deepslate_vital_primordite_ore",
-      () -> new HiddenOreBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
-        .strength(3f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
+    public static final RegistryObject<Block> VITAL_PRIMORDITE_ORE;
+    public static final RegistryObject<Block> DEEPSLATE_VITAL_PRIMORDITE_ORE;
+    public static final RegistryObject<Block> HIDDEN_VITAL_PRIMORDITE_ORE;
+    public static final RegistryObject<Block> HIDDEN_DEEPSLATE_VITAL_PRIMORDITE_ORE;
 
-    public static final RegistryObject<Block> VITAL_PRIMORDITE_ORE_CLIENT_VISUAL = registerBlock(
-      "vital_primordite_ore_client_visual",
-      () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
-        .noOcclusion()
-        .strength(0)
-        .instabreak())
-    );
-    public static final RegistryObject<Block> DEEPSLATE_VITAL_PRIMORDITE_ORE_CLIENT_VISUAL = registerBlock(
-      "deepslate_vital_primordite_ore_client_visual",
-      () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
-        .noOcclusion()
-        .strength(0)
-        .instabreak())
-    );
-
+    static {
+        PrimorditeOreSet vital = registerPrimorditeOreSet("vital",
+          UniformInt.of(3, 6), UniformInt.of(3, 7));
+        VITAL_PRIMORDITE_ORE = (RegistryObject<Block>) vital.stone();
+        DEEPSLATE_VITAL_PRIMORDITE_ORE = (RegistryObject<Block>) vital.deepslate();
+        HIDDEN_VITAL_PRIMORDITE_ORE = (RegistryObject<Block>) vital.hiddenStone();
+        HIDDEN_DEEPSLATE_VITAL_PRIMORDITE_ORE = (RegistryObject<Block>) vital.hiddenDeepslate();
+    }
 
     // ENERGETIC ITEMS
-    public static final RegistryObject<Block> RAW_ENERGETIC_PRIMORDITE_BLOCK = registerBlock("raw_energetic_primordite_block",
+    public static final RegistryObject<Block> ENERGETIC_PRIMORDITE_BLOCK = registerBlock(
+      "energetic_primordite_block",
       () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
-    public static final RegistryObject<Block> ENERGETIC_PRIMORDITE_ORE = registerBlock("energetic_primordite_ore",
-      () -> new HiddenOreBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
-        .strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3, 6)));
-    public static final RegistryObject<Block> DEEPSLATE_ENERGETIC_PRIMORDITE_ORE = registerBlock("deepslate_energetic_primordite_ore",
-      () -> new HiddenOreBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
-        .strength(3f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
+    public static final RegistryObject<Block> ENERGETIC_PRIMORDITE_ORE;
+    public static final RegistryObject<Block> DEEPSLATE_ENERGETIC_PRIMORDITE_ORE;
+    public static final RegistryObject<Block> HIDDEN_ENERGETIC_PRIMORDITE_ORE;
+    public static final RegistryObject<Block> HIDDEN_DEEPSLATE_ENERGETIC_PRIMORDITE_ORE;
 
-    public static final RegistryObject<Block> ENERGETIC_PRIMORDITE_ORE_CLIENT_VISUAL = registerBlock(
-      "energetic_primordite_ore_client_visual",
-      () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
-        .noOcclusion()
-        .strength(0)
-        .instabreak())
-    );
-    public static final RegistryObject<Block> DEEPSLATE_ENERGETIC_PRIMORDITE_ORE_CLIENT_VISUAL = registerBlock(
-      "deepslate_energetic_primordite_ore_client_visual",
-      () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
-        .noOcclusion()
-        .strength(0)
-        .instabreak())
-    );
+    static {
+        PrimorditeOreSet energetic = registerPrimorditeOreSet("energetic",
+          UniformInt.of(3, 6), UniformInt.of(3, 7));
+        ENERGETIC_PRIMORDITE_ORE = (RegistryObject<Block>) energetic.stone();
+        DEEPSLATE_ENERGETIC_PRIMORDITE_ORE = (RegistryObject<Block>) energetic.deepslate();
+        HIDDEN_ENERGETIC_PRIMORDITE_ORE = (RegistryObject<Block>) energetic.hiddenStone();
+        HIDDEN_DEEPSLATE_ENERGETIC_PRIMORDITE_ORE = (RegistryObject<Block>) energetic.hiddenDeepslate();
+    }
 
     // CEREBRAL ITEMS
-    public static final RegistryObject<Block> RAW_CEREBRAL_PRIMORDITE_BLOCK = registerBlock("raw_cerebral_primordite_block",
+    public static final RegistryObject<Block> CEREBRAL_PRIMORDITE_BLOCK = registerBlock(
+      "cerebral_primordite_block",
       () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
-    public static final RegistryObject<Block> CEREBRAL_PRIMORDITE_ORE = registerBlock("cerebral_primordite_ore",
-      () -> new HiddenOreBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
-        .strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3, 6)));
-    public static final RegistryObject<Block> DEEPSLATE_CEREBRAL_PRIMORDITE_ORE = registerBlock("deepslate_cerebral_primordite_ore",
-      () -> new HiddenOreBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
-        .strength(3f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
+    public static final RegistryObject<Block> CEREBRAL_PRIMORDITE_ORE;
+    public static final RegistryObject<Block> DEEPSLATE_CEREBRAL_PRIMORDITE_ORE;
+    public static final RegistryObject<Block> HIDDEN_CEREBRAL_PRIMORDITE_ORE;
+    public static final RegistryObject<Block> HIDDEN_DEEPSLATE_CEREBRAL_PRIMORDITE_ORE;
 
-    public static final RegistryObject<Block> CEREBRAL_PRIMORDITE_ORE_CLIENT_VISUAL = registerBlock(
-      "cerebral_primordite_ore_client_visual",
-      () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
-        .noOcclusion()
-        .strength(0)
-        .instabreak())
-    );
-    public static final RegistryObject<Block> DEEPSLATE_CEREBRAL_PRIMORDITE_ORE_CLIENT_VISUAL = registerBlock(
-      "deepslate_cerebral_primordite_ore_client_visual",
-      () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
-        .noOcclusion()
-        .strength(0)
-        .instabreak())
-    );
+    static {
+        PrimorditeOreSet cerebral = registerPrimorditeOreSet("cerebral",
+          UniformInt.of(3, 6), UniformInt.of(3, 7));
+        CEREBRAL_PRIMORDITE_ORE = (RegistryObject<Block>) cerebral.stone();
+        DEEPSLATE_CEREBRAL_PRIMORDITE_ORE = (RegistryObject<Block>) cerebral.deepslate();
+        HIDDEN_CEREBRAL_PRIMORDITE_ORE = (RegistryObject<Block>) cerebral.hiddenStone();
+        HIDDEN_DEEPSLATE_CEREBRAL_PRIMORDITE_ORE = (RegistryObject<Block>) cerebral.hiddenDeepslate();
+    }
 
     // MOURNFUL ITEMS
-    public static final RegistryObject<Block> RAW_MOURNFUL_PRIMORDITE_BLOCK = registerBlock("raw_mournful_primordite_block",
+    public static final RegistryObject<Block> MOURNFUL_PRIMORDITE_BLOCK = registerBlock(
+      "mournful_primordite_block",
       () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
-    public static final RegistryObject<Block> MOURNFUL_PRIMORDITE_ORE = registerBlock("mournful_primordite_ore",
-      () -> new HiddenOreBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
-        .strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3, 6)));
-    public static final RegistryObject<Block> DEEPSLATE_MOURNFUL_PRIMORDITE_ORE = registerBlock("deepslate_mournful_primordite_ore",
-      () -> new HiddenOreBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
-        .strength(3f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
+    public static final RegistryObject<Block> MOURNFUL_PRIMORDITE_ORE;
+    public static final RegistryObject<Block> DEEPSLATE_MOURNFUL_PRIMORDITE_ORE;
+    public static final RegistryObject<Block> HIDDEN_MOURNFUL_PRIMORDITE_ORE;
+    public static final RegistryObject<Block> HIDDEN_DEEPSLATE_MOURNFUL_PRIMORDITE_ORE;
 
-    public static final RegistryObject<Block> MOURNFUL_PRIMORDITE_ORE_CLIENT_VISUAL = registerBlock(
-      "mournful_primordite_ore_client_visual",
-      () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
-        .noOcclusion()
-        .strength(0)
-        .instabreak())
-    );
-    public static final RegistryObject<Block> DEEPSLATE_MOURNFUL_PRIMORDITE_ORE_CLIENT_VISUAL = registerBlock(
-      "deepslate_mournful_primordite_ore_client_visual",
-      () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
-        .noOcclusion()
-        .strength(0)
-        .instabreak())
-    );
-
-    // OTHER
-
-    public static final List<OrePair> ORE_PAIRS = List.of(
-      new OrePair(DREADED_PRIMORDITE_ORE, DEEPSLATE_DREADED_PRIMORDITE_ORE, "dreaded_primordite_ore"),
-      new OrePair(VITAL_PRIMORDITE_ORE, DEEPSLATE_VITAL_PRIMORDITE_ORE, "vital_primordite_ore"),
-      new OrePair(ENERGETIC_PRIMORDITE_ORE, DEEPSLATE_ENERGETIC_PRIMORDITE_ORE, "energetic_primordite_ore"),
-      new OrePair(CEREBRAL_PRIMORDITE_ORE, DEEPSLATE_CEREBRAL_PRIMORDITE_ORE, "cerebral_primordite_ore"),
-      new OrePair(MOURNFUL_PRIMORDITE_ORE, DEEPSLATE_MOURNFUL_PRIMORDITE_ORE, "mournful_primordite_ore")
-    );
+    static {
+        PrimorditeOreSet mournful = registerPrimorditeOreSet("mournful",
+          UniformInt.of(3, 6), UniformInt.of(3, 7));
+        MOURNFUL_PRIMORDITE_ORE = (RegistryObject<Block>) mournful.stone();
+        DEEPSLATE_MOURNFUL_PRIMORDITE_ORE = (RegistryObject<Block>) mournful.deepslate();
+        HIDDEN_MOURNFUL_PRIMORDITE_ORE = (RegistryObject<Block>) mournful.hiddenStone();
+        HIDDEN_DEEPSLATE_MOURNFUL_PRIMORDITE_ORE = (RegistryObject<Block>) mournful.hiddenDeepslate();
+    }
 
     /* ITEM REGISTERING END */
 
@@ -171,21 +124,33 @@ public class ModBlocks {
         return toReturn;
     }
 
-    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
-        return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block) {
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
 
-    public static RegistryObject<Block> getByName(String name) {
-        return BLOCKS.getEntries().stream()
-          .filter(entry -> {
-              assert entry.getId() != null;
-              return entry.getId().getPath().equals(name);
-          })
-          .findFirst()
-          .orElseThrow(() -> new IllegalArgumentException("No block registered with name: " + name));
+    private static PrimorditeOreSet registerPrimorditeOreSet(String elementName, UniformInt stoneExp, UniformInt deepslateExp) {
+        String baseName = elementName.toLowerCase() + "_primordite_ore";
+
+        RegistryObject<Block> stone = registerBlock(baseName,
+          () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
+            .strength(3f).requiresCorrectToolForDrops(), stoneExp));
+
+        RegistryObject<Block> deepslate = registerBlock("deepslate_" + baseName,
+          () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
+            .strength(4.5f).requiresCorrectToolForDrops(), deepslateExp));
+
+        RegistryObject<Block> hiddenStone = registerBlock("hidden_" + baseName,
+          () -> new HiddenOreBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
+            .strength(1.5f).requiresCorrectToolForDrops(), stone));
+
+        RegistryObject<Block> hiddenDeepslate = registerBlock("hidden_deepslate_" + baseName,
+          () -> new HiddenOreBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
+            .strength(3f).requiresCorrectToolForDrops(), deepslate));
+
+        return new PrimorditeOreSet(stone, deepslate, hiddenStone, hiddenDeepslate);
     }
 }

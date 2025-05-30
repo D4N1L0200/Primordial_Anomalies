@@ -11,8 +11,6 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.Objects;
-
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, Primanomalies.MOD_ID, exFileHelper);
@@ -21,69 +19,49 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         // DREADED ITEMS
-        blockWithItem(ModBlocks.RAW_DREADED_PRIMORDITE_BLOCK);
+        blockWithItem(ModBlocks.DREADED_PRIMORDITE_BLOCK);
 
         blockWithItem(ModBlocks.DREADED_PRIMORDITE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_DREADED_PRIMORDITE_ORE);
 
-        simpleBlock(ModBlocks.DREADED_PRIMORDITE_ORE_CLIENT_VISUAL.get(),
-          models().cubeAll("dreaded_primordite_ore_client_visual",
-            modLoc("block/dreaded_primordite_ore")));
-        simpleBlock(ModBlocks.DEEPSLATE_DREADED_PRIMORDITE_ORE_CLIENT_VISUAL.get(),
-          models().cubeAll("deepslate_dreaded_primordite_ore_client_visual",
-            modLoc("block/deepslate_dreaded_primordite_ore")));
+        copyVanillaBlockWithItem(ModBlocks.HIDDEN_DREADED_PRIMORDITE_ORE, "minecraft:block/stone");
+        copyVanillaBlockWithItem(ModBlocks.HIDDEN_DEEPSLATE_DREADED_PRIMORDITE_ORE, "minecraft:block/deepslate");
 
         // VITAL ITEMS
-        blockWithItem(ModBlocks.RAW_VITAL_PRIMORDITE_BLOCK);
+        blockWithItem(ModBlocks.VITAL_PRIMORDITE_BLOCK);
 
         blockWithItem(ModBlocks.VITAL_PRIMORDITE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_VITAL_PRIMORDITE_ORE);
 
-        simpleBlock(ModBlocks.VITAL_PRIMORDITE_ORE_CLIENT_VISUAL.get(),
-          models().cubeAll("vital_primordite_ore_client_visual",
-            modLoc("block/vital_primordite_ore")));
-        simpleBlock(ModBlocks.DEEPSLATE_VITAL_PRIMORDITE_ORE_CLIENT_VISUAL.get(),
-          models().cubeAll("deepslate_vital_primordite_ore_client_visual",
-            modLoc("block/deepslate_vital_primordite_ore")));
+        copyVanillaBlockWithItem(ModBlocks.HIDDEN_VITAL_PRIMORDITE_ORE, "minecraft:block/stone");
+        copyVanillaBlockWithItem(ModBlocks.HIDDEN_DEEPSLATE_VITAL_PRIMORDITE_ORE, "minecraft:block/deepslate");
 
         // ENERGETIC ITEMS
-        blockWithItem(ModBlocks.RAW_ENERGETIC_PRIMORDITE_BLOCK);
+        blockWithItem(ModBlocks.ENERGETIC_PRIMORDITE_BLOCK);
 
         blockWithItem(ModBlocks.ENERGETIC_PRIMORDITE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_ENERGETIC_PRIMORDITE_ORE);
 
-        simpleBlock(ModBlocks.ENERGETIC_PRIMORDITE_ORE_CLIENT_VISUAL.get(),
-          models().cubeAll("energetic_primordite_ore_client_visual",
-            modLoc("block/energetic_primordite_ore")));
-        simpleBlock(ModBlocks.DEEPSLATE_ENERGETIC_PRIMORDITE_ORE_CLIENT_VISUAL.get(),
-          models().cubeAll("deepslate_energetic_primordite_ore_client_visual",
-            modLoc("block/deepslate_energetic_primordite_ore")));
+        copyVanillaBlockWithItem(ModBlocks.HIDDEN_ENERGETIC_PRIMORDITE_ORE, "minecraft:block/stone");
+        copyVanillaBlockWithItem(ModBlocks.HIDDEN_DEEPSLATE_ENERGETIC_PRIMORDITE_ORE, "minecraft:block/deepslate");
 
         // CEREBRAL ITEMS
-        blockWithItem(ModBlocks.RAW_CEREBRAL_PRIMORDITE_BLOCK);
+        blockWithItem(ModBlocks.CEREBRAL_PRIMORDITE_BLOCK);
 
         blockWithItem(ModBlocks.CEREBRAL_PRIMORDITE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_CEREBRAL_PRIMORDITE_ORE);
 
-        simpleBlock(ModBlocks.CEREBRAL_PRIMORDITE_ORE_CLIENT_VISUAL.get(),
-          models().cubeAll("cerebral_primordite_ore_client_visual",
-            modLoc("block/cerebral_primordite_ore")));
-        simpleBlock(ModBlocks.DEEPSLATE_CEREBRAL_PRIMORDITE_ORE_CLIENT_VISUAL.get(),
-          models().cubeAll("deepslate_cerebral_primordite_ore_client_visual",
-            modLoc("block/deepslate_cerebral_primordite_ore")));
+        copyVanillaBlockWithItem(ModBlocks.HIDDEN_CEREBRAL_PRIMORDITE_ORE, "minecraft:block/stone");
+        copyVanillaBlockWithItem(ModBlocks.HIDDEN_DEEPSLATE_CEREBRAL_PRIMORDITE_ORE, "minecraft:block/deepslate");
 
         // MOURNFUL ITEMS
-        blockWithItem(ModBlocks.RAW_MOURNFUL_PRIMORDITE_BLOCK);
+        blockWithItem(ModBlocks.MOURNFUL_PRIMORDITE_BLOCK);
 
         blockWithItem(ModBlocks.MOURNFUL_PRIMORDITE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_MOURNFUL_PRIMORDITE_ORE);
 
-        simpleBlock(ModBlocks.MOURNFUL_PRIMORDITE_ORE_CLIENT_VISUAL.get(),
-          models().cubeAll("mournful_primordite_ore_client_visual",
-            modLoc("block/mournful_primordite_ore")));
-        simpleBlock(ModBlocks.DEEPSLATE_MOURNFUL_PRIMORDITE_ORE_CLIENT_VISUAL.get(),
-          models().cubeAll("deepslate_mournful_primordite_ore_client_visual",
-            modLoc("block/deepslate_mournful_primordite_ore")));
+        copyVanillaBlockWithItem(ModBlocks.HIDDEN_MOURNFUL_PRIMORDITE_ORE, "minecraft:block/stone");
+        copyVanillaBlockWithItem(ModBlocks.HIDDEN_DEEPSLATE_MOURNFUL_PRIMORDITE_ORE, "minecraft:block/deepslate");
     }
 
     private String name(Block block) {
@@ -94,12 +72,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
         return ForgeRegistries.BLOCKS.getKey(block);
     }
 
-    private void blockItem(RegistryObject<Block> blockRegistryObject) {
-        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(Primanomalies.MOD_ID +
-          ":block/" + Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get())).getPath()));
-    }
+// --Commented out by Inspection START (29/05/2025 23:21):
+//    private void blockItem(RegistryObject<Block> blockRegistryObject) {
+//        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(Primanomalies.MOD_ID +
+//          ":block/" + Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get())).getPath()));
+//    }
+// --Commented out by Inspection STOP (29/05/2025 23:21)
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
+    }
+
+    private void copyVanillaBlockWithItem(RegistryObject<Block> blockRegistryObject, String vanillaTexturePath) {
+        ModelFile model = models().cubeAll(name(blockRegistryObject.get()), ResourceLocation.parse(vanillaTexturePath));
+        simpleBlockWithItem(blockRegistryObject.get(), model);
     }
 }

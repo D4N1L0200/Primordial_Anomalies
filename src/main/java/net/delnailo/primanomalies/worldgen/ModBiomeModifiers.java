@@ -26,36 +26,36 @@ public class ModBiomeModifiers {
 
         // DREADED ITEMS
         context.register(ADD_DREADED_PRIMORDITE_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.DREADED_PRIMORDITE_ORE_PLACED_KEY)),
-                GenerationStep.Decoration.UNDERGROUND_ORES));
+          biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+          HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.DREADED_PRIMORDITE_ORE_PLACED_KEY)),
+          GenerationStep.Decoration.UNDERGROUND_ORES));
 
         // VITAL ITEMS
         context.register(ADD_VITAL_PRIMORDITE_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.VITAL_PRIMORDITE_ORE_PLACED_KEY)),
-                GenerationStep.Decoration.UNDERGROUND_ORES));
+          biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+          HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.VITAL_PRIMORDITE_ORE_PLACED_KEY)),
+          GenerationStep.Decoration.UNDERGROUND_ORES));
 
         // ENERGETIC ITEMS
         context.register(ADD_ENERGETIC_PRIMORDITE_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.ENERGETIC_PRIMORDITE_ORE_PLACED_KEY)),
-                GenerationStep.Decoration.UNDERGROUND_ORES));
+          biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+          HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.ENERGETIC_PRIMORDITE_ORE_PLACED_KEY)),
+          GenerationStep.Decoration.UNDERGROUND_ORES));
 
         // CEREBRAL ITEMS
         context.register(ADD_CEREBRAL_PRIMORDITE_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.CEREBRAL_PRIMORDITE_ORE_PLACED_KEY)),
-                GenerationStep.Decoration.UNDERGROUND_ORES));
+          biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+          HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.CEREBRAL_PRIMORDITE_ORE_PLACED_KEY)),
+          GenerationStep.Decoration.UNDERGROUND_ORES));
 
         // MOURNFUL ITEMS
         context.register(ADD_MOURNFUL_PRIMORDITE_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.MOURNFUL_PRIMORDITE_ORE_PLACED_KEY)),
-                GenerationStep.Decoration.UNDERGROUND_ORES));
+          biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+          HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.MOURNFUL_PRIMORDITE_ORE_PLACED_KEY)),
+          GenerationStep.Decoration.UNDERGROUND_ORES));
     }
 
     private static ResourceKey<BiomeModifier> registerKey(String name) {
-        return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(Primanomalies.MOD_ID, name));
+        return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, ResourceLocation.fromNamespaceAndPath(Primanomalies.MOD_ID, name));
     }
 }

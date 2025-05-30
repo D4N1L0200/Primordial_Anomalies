@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "pure_energetic",
+  "ingredient": {
+    "item": "primanomalies:energetic_primordite"
+  },
+  "result": "primanomalies:pure_energetic_primordite"
+}

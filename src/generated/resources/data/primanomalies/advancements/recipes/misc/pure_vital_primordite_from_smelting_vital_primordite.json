@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "primanomalies:pure_vital_primordite_from_smelting_vital_primordite"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vital_primordite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "primanomalies:vital_primordite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_vital_primordite",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "primanomalies:pure_vital_primordite_from_smelting_vital_primordite"
+    ]
+  },
+  "sends_telemetry_event": false
+}

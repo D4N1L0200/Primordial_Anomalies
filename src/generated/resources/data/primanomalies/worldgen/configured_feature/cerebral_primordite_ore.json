@@ -6,7 +6,7 @@
     "targets": [
       {
         "state": {
-          "Name": "primanomalies:cerebral_primordite_ore"
+          "Name": "primanomalies:hidden_cerebral_primordite_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",
@@ -15,7 +15,7 @@
       },
       {
         "state": {
-          "Name": "primanomalies:deepslate_cerebral_primordite_ore"
+          "Name": "primanomalies:hidden_deepslate_cerebral_primordite_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",

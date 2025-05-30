@@ -1,4 +1,5 @@
-// 1.20.1	2025-05-26T20:00:18.015904	Tags for minecraft:block mod id primanomalies
-ebd6d8c482026e1bab86c38cab69b3ca57e58431 data/minecraft/tags/blocks/mineable/pickaxe.json
-23c20bbcafdc9517f8c7e607870b055b80273575 data/minecraft/tags/blocks/needs_diamond_tool.json
-e6c86ea15b0e03df9f088e84afe1f72c62cb2881 data/minecraft/tags/blocks/needs_stone_tool.json
+// 1.20.1	2025-05-30T13:24:06.2500055	Tags for minecraft:block mod id primanomalies
+55e85ffdae06ae45b4acf252710212528d15e7d4 data/forge/tags/blocks/needs_netherite_tool.json
+bab1c7e6d53c18de3b0bb73f86407a34c023c4a8 data/minecraft/tags/blocks/mineable/pickaxe.json
+adb538665fd4e3eb5c642ece40c216b181842ebe data/minecraft/tags/blocks/needs_diamond_tool.json
+a86ce85cf857ebc46fd4a3c5491167284034ec89 data/minecraft/tags/blocks/needs_stone_tool.json

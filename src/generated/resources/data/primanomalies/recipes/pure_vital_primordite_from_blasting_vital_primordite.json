@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "group": "pure_vital",
+  "ingredient": {
+    "item": "primanomalies:vital_primordite"
+  },
+  "result": "primanomalies:pure_vital_primordite"
+}

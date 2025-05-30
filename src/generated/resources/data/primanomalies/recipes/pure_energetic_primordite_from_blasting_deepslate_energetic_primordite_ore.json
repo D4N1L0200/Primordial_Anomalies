@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "group": "pure_energetic",
+  "ingredient": {
+    "item": "primanomalies:deepslate_energetic_primordite_ore"
+  },
+  "result": "primanomalies:pure_energetic_primordite"
+}

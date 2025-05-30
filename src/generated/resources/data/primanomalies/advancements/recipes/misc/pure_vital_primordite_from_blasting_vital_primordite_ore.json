@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "primanomalies:pure_vital_primordite_from_blasting_vital_primordite_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vital_primordite_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "primanomalies:vital_primordite_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_vital_primordite_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "primanomalies:pure_vital_primordite_from_blasting_vital_primordite_ore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "pure_mournful",
+  "ingredient": {
+    "item": "primanomalies:mournful_primordite"
+  },
+  "result": "primanomalies:pure_mournful_primordite"
+}

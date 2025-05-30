@@ -30,8 +30,8 @@ public class ModConfiguredFeatures {
 
         // DREADED ORES
         List<OreConfiguration.TargetBlockState> overworldDreadedPrimorditeOres = List.of(
-          OreConfiguration.target(stoneReplaceable, ModBlocks.DREADED_PRIMORDITE_ORE.get().defaultBlockState()),
-          OreConfiguration.target(deepslateReplaceable, ModBlocks.DEEPSLATE_DREADED_PRIMORDITE_ORE.get().defaultBlockState())
+          OreConfiguration.target(stoneReplaceable, ModBlocks.HIDDEN_DREADED_PRIMORDITE_ORE.get().defaultBlockState()),
+          OreConfiguration.target(deepslateReplaceable, ModBlocks.HIDDEN_DEEPSLATE_DREADED_PRIMORDITE_ORE.get().defaultBlockState())
         );
         register(
           context, OVERWORLD_DREADED_PRIMORDITE_ORE_KEY, Feature.ORE,
@@ -40,8 +40,8 @@ public class ModConfiguredFeatures {
 
         // VITAL ORES
         List<OreConfiguration.TargetBlockState> overworldVitalPrimorditeOres = List.of(
-          OreConfiguration.target(stoneReplaceable, ModBlocks.VITAL_PRIMORDITE_ORE.get().defaultBlockState()),
-          OreConfiguration.target(deepslateReplaceable, ModBlocks.DEEPSLATE_VITAL_PRIMORDITE_ORE.get().defaultBlockState())
+          OreConfiguration.target(stoneReplaceable, ModBlocks.HIDDEN_VITAL_PRIMORDITE_ORE.get().defaultBlockState()),
+          OreConfiguration.target(deepslateReplaceable, ModBlocks.HIDDEN_DEEPSLATE_VITAL_PRIMORDITE_ORE.get().defaultBlockState())
         );
         register(
           context, OVERWORLD_VITAL_PRIMORDITE_ORE_KEY, Feature.ORE,
@@ -50,8 +50,8 @@ public class ModConfiguredFeatures {
 
         // ENERGETIC ORES
         List<OreConfiguration.TargetBlockState> overworldEnergeticPrimorditeOres = List.of(
-          OreConfiguration.target(stoneReplaceable, ModBlocks.ENERGETIC_PRIMORDITE_ORE.get().defaultBlockState()),
-          OreConfiguration.target(deepslateReplaceable, ModBlocks.DEEPSLATE_ENERGETIC_PRIMORDITE_ORE.get().defaultBlockState())
+          OreConfiguration.target(stoneReplaceable, ModBlocks.HIDDEN_ENERGETIC_PRIMORDITE_ORE.get().defaultBlockState()),
+          OreConfiguration.target(deepslateReplaceable, ModBlocks.HIDDEN_DEEPSLATE_ENERGETIC_PRIMORDITE_ORE.get().defaultBlockState())
         );
         register(
           context, OVERWORLD_ENERGETIC_PRIMORDITE_ORE_KEY, Feature.ORE,
@@ -60,8 +60,8 @@ public class ModConfiguredFeatures {
 
         // CEREBRAL ORES
         List<OreConfiguration.TargetBlockState> overworldCerebralPrimorditeOres = List.of(
-          OreConfiguration.target(stoneReplaceable, ModBlocks.CEREBRAL_PRIMORDITE_ORE.get().defaultBlockState()),
-          OreConfiguration.target(deepslateReplaceable, ModBlocks.DEEPSLATE_CEREBRAL_PRIMORDITE_ORE.get().defaultBlockState())
+          OreConfiguration.target(stoneReplaceable, ModBlocks.HIDDEN_CEREBRAL_PRIMORDITE_ORE.get().defaultBlockState()),
+          OreConfiguration.target(deepslateReplaceable, ModBlocks.HIDDEN_DEEPSLATE_CEREBRAL_PRIMORDITE_ORE.get().defaultBlockState())
         );
         register(
           context, OVERWORLD_CEREBRAL_PRIMORDITE_ORE_KEY, Feature.ORE,
@@ -70,8 +70,8 @@ public class ModConfiguredFeatures {
 
         // MOURNFUL ORES
         List<OreConfiguration.TargetBlockState> overworldMournfulPrimorditeOres = List.of(
-          OreConfiguration.target(stoneReplaceable, ModBlocks.MOURNFUL_PRIMORDITE_ORE.get().defaultBlockState()),
-          OreConfiguration.target(deepslateReplaceable, ModBlocks.DEEPSLATE_MOURNFUL_PRIMORDITE_ORE.get().defaultBlockState())
+          OreConfiguration.target(stoneReplaceable, ModBlocks.HIDDEN_MOURNFUL_PRIMORDITE_ORE.get().defaultBlockState()),
+          OreConfiguration.target(deepslateReplaceable, ModBlocks.HIDDEN_DEEPSLATE_MOURNFUL_PRIMORDITE_ORE.get().defaultBlockState())
         );
         register(
           context, OVERWORLD_MOURNFUL_PRIMORDITE_ORE_KEY, Feature.ORE,
@@ -81,7 +81,7 @@ public class ModConfiguredFeatures {
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
-        return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(Primanomalies.MOD_ID, name));
+        return ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(Primanomalies.MOD_ID, name));
     }
 
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context,

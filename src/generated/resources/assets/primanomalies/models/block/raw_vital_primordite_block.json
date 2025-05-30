@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "primanomalies:block/raw_vital_primordite_block"
-  }
-}

@@ -6,7 +6,7 @@
     "targets": [
       {
         "state": {
-          "Name": "primanomalies:mournful_primordite_ore"
+          "Name": "primanomalies:hidden_mournful_primordite_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",
@@ -15,7 +15,7 @@
       },
       {
         "state": {
-          "Name": "primanomalies:deepslate_mournful_primordite_ore"
+          "Name": "primanomalies:hidden_deepslate_mournful_primordite_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",

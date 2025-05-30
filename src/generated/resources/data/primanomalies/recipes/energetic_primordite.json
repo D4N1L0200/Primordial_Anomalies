@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "primanomalies:energetic_primordite_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "primanomalies:energetic_primordite"
+  }
+}
